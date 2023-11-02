@@ -2,22 +2,38 @@
 /* CSS REMEDY */
 /**************/
 
+@font-face {
+  font-family: "Iron Man";
+  src:
+    url("/fonts/Stark.otf") format("opentype"),
+    url("/fonts/Stark\ Bold.otf") format("opentype"),
+    url("/fonts/Stark\ Bold\ Italic.otf") format("opentype"),
+    url("/fonts/Stark\ Hollow.otf") format("opentype"),
+    url("/fonts/Stark\ Hollow\ Italic.otf") format("opentype"),
+    url("/fonts/Stark\ Italic.otf") format("opentype"),
+
+}
+
 /* naar een idee van Jen Simmons */
 *, *::after, *::before {
   box-sizing:border-box;  
 }
 
 body {
-  margin:0;
+  margin:auto;
+  font-family: 'Gill Sans MT', 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
+
+  background-image: url("/images/Background\ tony\ lab\ standaard.png");
+  background-size: cover;
+  background-position: center 70%;
+  height:100dvh
 }
 
 button:not([disabled]) {
   cursor:pointer;
 }
 
-img {
-  max-width:100%;
-}
+
 
 
 
@@ -28,7 +44,8 @@ img {
 /*********************/
 
 :root {
-  --color-headings:crimson
+  --color-headings: #FFFFFF;
+  --color-text: #FFFFFF;
   /* ... */
 
 }
@@ -42,7 +59,65 @@ img {
 /********************/
 
 h1 {
-  color:var(--color-headings);
+  color: var(--color-headings);
+  font-family: 'Gill Sans MT', 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 2em;
+  text-align: left;
+  margin-left: 10%;
+}
+
+h1 img { 
+  max-width: 80%;
+}
+
+article {
+  background-color: rgb(128 128 128 / 0);
+  height:100%;
+
+  display: grid;
+  grid-template: 1fr 1fr 1fr 1fr 30% / 0.88fr 1.5fr 1fr;
+
+}
+
+ol {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 5;
+
+  margin:0;
+  padding:0;
+  height:100%;
+
+  /* background-color: #99999999; */
+
+  list-style: none;
+
+  position: relative;
+}
+
+ol li {
+  position: absolute;
+  inset:0;
+
+  height:100%;
+
+  /* background-color: #f001; */
+  text-align: center;
+}
+
+ol li img {
+  /* display:block; */
+  height:100%;
+  width:auto;
+
+  translate:0 -70vh;
+  transition: .3s;
+  /* transition-timing-function: ease-in-out; */
+}
+
+ol li:hover img {
+  translate:0 0vh;
 }
 
 /* ... */
