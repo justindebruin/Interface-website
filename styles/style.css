@@ -67,7 +67,7 @@ h1 {
 }
 
 h1 img { 
-  max-width: 80%;
+  max-width: 100%;
 }
 
 article {
@@ -108,16 +108,16 @@ ol li {
 
 ol li img {
   /* display:block; */
-  height:100%;
+  height:120%;
   width:auto;
 
-  translate:0 -70vh;
+  translate:0 -120vh;
   transition: .3s;
-  /* transition-timing-function: ease-in-out; */
+  transition-timing-function: ease-in-out;
 }
 
 ol li:hover img {
-  translate:0 0vh;
+  translate:0 -10vh;
 }
 
 /* ... */
