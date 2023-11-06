@@ -32,7 +32,7 @@ var count = 0;
 var upgradeButton = document.querySelector("article ol button");    // Upgrade button //
 var movieLogo = document.querySelector("h1 img");                   // Movie logo //
 
-upgradeButton.onclick = imageNaarVolgendLogo;
+upgradeButton.onclick = combinedNextSuit;
 
 function imageNaarVolgendLogo() {
 
@@ -105,15 +105,35 @@ function suitFlyAnimation() {
   suitFlying.onanimationend = geland;
   
   function geland() {
-    console.log("he");
+    // console.log("he");
     suitFlying.classList.remove("flyIn");
   }
   
+}
+
+// geluid-afspelen //
+
+var soundButton = document.querySelector("article ol button")
+var sound = document.querySelector("article ol audio")
+
+soundButton.onclick = combinedNextSuit;
+
+function mechanicalSounds() {
+  if (sound.paused) {
+      sound.play();
+      // console.log("muziek");
+    }
+
+  else {
+    sound.pause();
+    // console.log("muziek uit");
+  }
 }
 
 function combinedNextSuit() {
   imageNaarVolgendSuit();
   suitFlyAnimation();
   imageNaarVolgendLogo();
+  mechanicalSounds();
 }
 
