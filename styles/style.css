@@ -24,20 +24,18 @@ body {
   font-family: 'Gill Sans MT', 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
 
   background-image: url("/images/iron\ man\ hud\ overlay-04.png"), url("/images/Background\ tony\ lab\ Blauw-donker.png");
-  /* background-image: url("/images/Background\ tony\ lab\ Blauw-donker.png"); */
 
   background-size: cover;
   background-position: center 70%;
   
-  height:100dvh
+  height:100dvh;
+  cursor: url("/images/iron-man-hand-cursor.png"), pointer;
+
 }
 
-button:not([disabled]) {
-  cursor:pointer;
+button {
+  cursor: url("/images/iron-man-hand-cursor-click.png"), pointer;
 }
-
-
-
 
 
 
@@ -49,7 +47,9 @@ button:not([disabled]) {
 :root {
   --color-headings: #FFFFFF;
   --color-text: #FFFFFF;
-  --drop-shadows: #000000
+  --drop-shadows: #000000;
+  --transparent-background: #FFFFFF00;
+
   /* ... */
 
 }
@@ -68,14 +68,15 @@ h1 {
   font-size: 2em;
   text-align: left;
   margin-left: 10%;
+
+  filter: drop-shadow(0 0 1.5em var(--drop-shadows))
 }
 
 h1 img { 
-  max-width: 10em;
+  max-height: 2.3em;
 }
 
 article {
-  background-color: rgb(128 128 128 / 0);
   height:100%;
 
   display: grid;
@@ -93,9 +94,8 @@ ol:nth-of-type(1) {
 
   margin:0;
   padding:0;
-  height:100%;
-
-  /* background-color: #99999999; */
+  height:110%;
+  width:auto;
 
   list-style: none;
 
@@ -107,37 +107,30 @@ ol:nth-of-type(1) li {
   inset:0;
 
   height:100%;
-  align-items: end;
 
-  /* background-color: #f001; */
   text-align: center;
 }
 
 ol:nth-of-type(1) li:nth-of-type(1) img {
-  /* display:block; */
   height:120%;
   width:auto;
 
-  transform-origin: 3vh -120vh;
-
-  animation-name: suit-flying;
-  animation-duration: .5s;
-  animation-play-state: paused;
-  animation-timing-function: cubic-bezier(0.365, -0.015, 0.000, 1.000); 
+  transform:translate(0, -15vh);  
+ 
 }
 
 @keyframes suit-flying {
-  0% { transform:translate(0, -120vh); }
-  100% { transform:translate(0, -10vh); }
+  0% { transform:translate(0, -180vh); }
+  100% { transform:translate(0, -15vh); }
 }
 
 ol:nth-of-type(1) li:nth-of-type(1) img.flyIn {
-  animation-play-state:running;
+  /* animation-play-state:running; */
+  animation-name: suit-flying;
+  animation-duration: 2s;
+  /* animation-play-state: paused; */
+  animation-timing-function: cubic-bezier(0.365, -0.015, 0.000, 0.900); 
 }
-
-/* ol:nth-of-type(1) li:hover img {
-  translate: 3vh -10vh;
-} */
 
 /* Vormgeving Upgrade-knop */
 
@@ -151,22 +144,22 @@ ol:nth-of-type(2) {
   padding:0;
   height:100%;
 
-  /* background-color: #99999999; */
-
   list-style: none;
 
   position: relative;
 }
 
 ol:nth-of-type(2) button {
-  background-color: #FFFFFF00;
-  border-color: #FFFFFF00;
+  background-color: var(--transparent-background);
+  border-color: var(--transparent-background);
 
   position: absolute;
   translate: -1.15vh 10vh;
   transition-duration: .3s;
 
-  width: auto;
+  width: 100%;
+  min-width: 4em;
+  min-height: auto;
   margin: auto;
   padding: 0;
 }
@@ -179,6 +172,8 @@ ol:nth-of-type(2) button:hover {
 ol:nth-of-type(2) button img {
   max-width: 80%;
   scale: 1;
+  min-width: 80%;
+  min-height: auto;
 
   filter: drop-shadow(0 0 2em var(--drop-shadows)) saturate(0.8);
 }
@@ -194,8 +189,6 @@ ol:nth-of-type(3) {
   margin:0;
   padding:0;
   height:100%;
-
-  /* background-color: #99999999; */
 
   list-style: none;
 
@@ -221,8 +214,6 @@ ol:nth-of-type(4) {
   padding:0;
   height:100%;
 
-  /* background-color: #99999999; */
-
   list-style: none;
 
   position: relative;
@@ -246,8 +237,6 @@ ol:nth-of-type(5) {
   margin:0;
   padding:0;
   height:100%;
-
-  /* background-color: #99999999; */
 
   list-style: none;
 

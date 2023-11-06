@@ -7,7 +7,6 @@ var moviesLogos = [
   "/images/Movie Logos/iron-man logo.png",
   "/images/Movie Logos/iron-man logo.png",
   "/images/Movie Logos/iron-man logo.png",
-  "/images/Movie Logos/iron-man logo.png",
   "/images/Movie Logos/iron-man-2 logo.png",
   "/images/Movie Logos/iron-man-2 logo.png",
   "/images/Movie Logos/iron-man-2 logo.png",
@@ -37,7 +36,7 @@ upgradeButton.onclick = imageNaarVolgendLogo;
 
 function imageNaarVolgendLogo() {
 
-  if (count >= 19) {
+  if (count >= 18) {
     count = 0;
     console.log(count);
     console.log(moviesLogos[count]);
@@ -55,7 +54,7 @@ function imageNaarVolgendLogo() {
 
 // array voor het cyclen van Iron Man suits//
 var ironManSuitCycle = [                       
-  "/images/Iron Man suits/mark 1.png",
+  // "/images/Iron Man suits/mark 1.png",
   "/images/Iron Man suits/mark 2.png",
   "/images/Iron Man suits/mark 3.png",
   "/images/Iron Man suits/mark 4.png",
@@ -86,8 +85,8 @@ upgradeButtonSuits.onclick = combinedNextSuit
 
 function imageNaarVolgendSuit() {
 
-  if (count >= 19) {
-    count = 0;
+  if (count>= 18) {
+    window.location.reload();
     console.log(count);
     console.log(ironManSuitCycle[count]);
     ironManSuit.src = ironManSuitCycle[count]
@@ -101,7 +100,15 @@ function imageNaarVolgendSuit() {
 }
 
 function suitFlyAnimation() {
-  suitFlying.classList.add("flyIn")
+  suitFlying.classList.add("flyIn");
+
+  suitFlying.onanimationend = geland;
+  
+  function geland() {
+    console.log("he");
+    suitFlying.classList.remove("flyIn");
+  }
+  
 }
 
 function combinedNextSuit() {
