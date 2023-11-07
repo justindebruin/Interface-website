@@ -3,15 +3,15 @@
 /**************/
 
 @font-face {
-  font-family: "Iron Man";
+  font-family: "Orbitron";
   src:
-    url("/fonts/Stark.otf") format("opentype"),
-    url("/fonts/Stark\ Bold.otf") format("opentype"),
-    url("/fonts/Stark\ Bold\ Italic.otf") format("opentype"),
-    url("/fonts/Stark\ Hollow.otf") format("opentype"),
-    url("/fonts/Stark\ Hollow\ Italic.otf") format("opentype"),
-    url("/fonts/Stark\ Italic.otf") format("opentype"),
+    url("/fonts/Orbitron-VariableFont_wght.ttf") format("truetype");
+}
 
+@font-face {
+  font-family: "Aldo";
+  src:
+    url("/fonts/AldotheApache.ttf") format("truetype");
 }
 
 /* naar een idee van Jen Simmons */
@@ -21,20 +21,47 @@
 
 body {
   margin:auto;
-  font-family: 'Gill Sans MT', 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
 
-  background-image: url("/images/iron\ man\ hud\ overlay-04.png"), url("/images/Background\ tony\ lab\ Blauw-donker.png");
-
+  background-image:  url("/images/Background\ tony\ lab\ Blauw-donker.png");
   background-size: cover;
   background-position: center 70%;
   
   height:100dvh;
-  cursor: url("/images/iron-man-hand-cursor.png"), pointer;
-
+  cursor: url("/images/iron-man-hand-cursor.png") 21 27, pointer;
 }
 
+body::before {
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image:url("/images/iron\ man\ hud\ overlay-04.png");
+
+  background-size: cover;
+  background-position: center 70%;
+}
+
+@media (prefers-reduced-motion:no-preference) {
+  body::before {
+    animation-name: fadein;
+    animation-duration: 1s;
+    animation-delay: 2s;
+    animation-fill-mode: both;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+
+
 button {
-  cursor: url("/images/iron-man-hand-cursor-click.png"), pointer;
+  cursor: url("/images/iron-man-hand-cursor-click.png") 21 27, pointer;
 }
 
 
@@ -64,8 +91,8 @@ button {
 
 h1 {
   color: var(--color-headings);
-  font-family: 'Gill Sans MT', 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 2em;
+  font-family: "Orbitron", Helvetica, sans-serif;
+  font-size: 2.5  vw;
   text-align: left;
   margin-left: 10%;
 
@@ -73,7 +100,7 @@ h1 {
 }
 
 h1 img { 
-  max-height: 2.3em;
+  max-height: 2.5em;
 }
 
 article {
@@ -84,9 +111,155 @@ article {
 
 }
 
+/* text in bubbles */
+
+
+/* HEAD textbubble */
+ul:nth-of-type(3) {
+  position: relative;
+  text-align: left;
+
+}
+
+ul:nth-of-type(3) li {
+  position: absolute;
+  max-width: 110%;
+
+}
+
+ul:nth-of-type(3) li:nth-of-type(1) {
+  translate: 15vh 5vh;
+
+}
+
+ul:nth-of-type(3) li:nth-of-type(2) {
+  font-family: "Orbitron", Helvetica, sans-serif;
+  font-size: 2vh;
+  font-weight: 700;
+  max-width: 57%;
+  color: var(--color-text); 
+
+  translate: 19.6vh 7.9vh;
+
+}
+
+
+/* FEET textbubble */
+ul:nth-of-type(4) {
+  position: relative;
+  text-align: left;
+  text-align: top;
+
+}
+
+ul:nth-of-type(4) li {
+  position: absolute;
+  max-width: 110%;
+
+}
+
+ul:nth-of-type(4) li:nth-of-type(1) {
+  translate: 20vh 1vh;
+
+}
+
+ul:nth-of-type(4) li:nth-of-type(2) {
+  font-family: "Orbitron", Helvetica, sans-serif;
+  font-size: 2vh;
+  font-weight: 700;
+  max-width: 60%;
+  color: var(--color-text); 
+
+  translate: 23.6vh 4.5vh;
+
+}
+
+
+
+
+/* Body textbubble */
+ul:nth-of-type(5) {
+  position: relative;
+  text-align: left;
+
+}
+
+ul:nth-of-type(5) li {
+  position: absolute;
+  max-width: 110%;
+
+}
+
+ul:nth-of-type(5) li:nth-of-type(1) {
+  translate: -20vh;
+
+}
+
+ul:nth-of-type(5) li:nth-of-type(2) {
+  font-family: "Orbitron", Helvetica, sans-serif;
+  font-size: 2vh;
+  font-weight: 700;
+  max-width: 60%;
+  color: var(--color-text); 
+
+  translate: -1.5vh 3.8vh;
+
+}
+
+/* Suit name textbubble */
+ul:nth-of-type(6) {
+  position: relative;
+  text-align: left;
+
+}
+
+ul:nth-of-type(6) li {
+  position: absolute;
+  max-width: 110%;
+
+}
+
+ul:nth-of-type(6) li:nth-of-type(1) {
+  translate: 56vh;
+
+}
+
+ul:nth-of-type(6) li:nth-of-type(2) {
+  font-family: "Aldo", Helvetica, sans-serif;
+  font-size: 3.5vh;
+  max-width: 65%;
+  color: var(--color-text); 
+
+  translate: 62.5vh 3.5vh;
+}
+
+ul:nth-of-type(6) {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+
+  margin:0;
+  padding:0;
+  height:100%;
+
+  list-style: none;
+
+  position: relative;
+}
+
+ul:nth-of-type(6) img {
+  max-width: 80%;
+  scale: 80%;
+  /* translate: 53vh; */
+  
+
+  filter: drop-shadow(0 0 2em var(--drop-shadows)) saturate(0.8);
+}
+
 /* Vormgeving Iron Man suits */
 
-ol:nth-of-type(1) {
+ul:nth-of-type(1) {
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 2;
@@ -94,7 +267,7 @@ ol:nth-of-type(1) {
 
   margin:0;
   padding:0;
-  height:110%;
+  height:105%;
   width:auto;
 
   list-style: none;
@@ -102,7 +275,7 @@ ol:nth-of-type(1) {
   position: relative;
 }
 
-ol:nth-of-type(1) li {
+ul:nth-of-type(1) li {
   position: absolute;
   inset:0;
 
@@ -111,20 +284,19 @@ ol:nth-of-type(1) li {
   text-align: center;
 }
 
-ol:nth-of-type(1) li:nth-of-type(1) img {
+ul:nth-of-type(1) li:nth-of-type(1) img {
   height:120%;
   width:auto;
 
-  transform:translate(0, -15vh);  
- 
+  transform:translate(0, -13vh);  
 }
 
 @keyframes suit-flying {
   0% { transform:translate(0, -180vh); }
-  100% { transform:translate(0, -15vh); }
+  100% { transform:translate(0, -13vh); }
 }
 
-ol:nth-of-type(1) li:nth-of-type(1) img.flyIn {
+ul:nth-of-type(1) li:nth-of-type(1) img.flyIn {
   /* animation-play-state:running; */
   animation-name: suit-flying;
   animation-duration: 2s;
@@ -134,7 +306,7 @@ ol:nth-of-type(1) li:nth-of-type(1) img.flyIn {
 
 /* Vormgeving Upgrade-knop */
 
-ol:nth-of-type(2) {
+ul:nth-of-type(2) {
   grid-column-start: 3;
   grid-column-end: 4;
   grid-row-start: 5;
@@ -149,7 +321,7 @@ ol:nth-of-type(2) {
   position: relative;
 }
 
-ol:nth-of-type(2) button {
+ul:nth-of-type(2) button {
   background-color: var(--transparent-background);
   border-color: var(--transparent-background);
 
@@ -164,12 +336,12 @@ ol:nth-of-type(2) button {
   padding: 0;
 }
 
-ol:nth-of-type(2) button:hover {
+ul:nth-of-type(2) button:hover {
   scale: 0.9;
   transition-duration: .3s;
 }
 
-ol:nth-of-type(2) button img {
+ul:nth-of-type(2) button img {
   max-width: 80%;
   scale: 1;
   min-width: 80%;
@@ -180,7 +352,7 @@ ol:nth-of-type(2) button img {
 
 /* CSS voor plaatsing textbubbels - head */
 
-ol:nth-of-type(3) {
+ul:nth-of-type(3) {
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 2;
@@ -195,16 +367,16 @@ ol:nth-of-type(3) {
   position: relative;
 }
 
-ol:nth-of-type(3) img {
+ul:nth-of-type(3) img {
   max-width: 110%;
-  translate: 20vh 5vh;
+  /* translate: 20vh 5vh; */
 
   filter: drop-shadow(0 0 2em var(--drop-shadows)) saturate(0.8);
 }
 
 /* CSS voor plaatsing textbubbels - feet */
 
-ol:nth-of-type(4) {
+ul:nth-of-type(4) {
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 5;
@@ -219,16 +391,16 @@ ol:nth-of-type(4) {
   position: relative;
 }
 
-ol:nth-of-type(4) img {
-  max-width: 110%;
-  translate: 28vh 3vh;
+ul:nth-of-type(4) img {
+  max-width: 120%;
+  /* translate: 28vh 3vh; */
 
   filter: drop-shadow(0 0 2em var(--drop-shadows)) saturate(0.8);
 }
 
 /* CSS voor plaatsing textbubbels - body */
 
-ol:nth-of-type(5) {
+ul:nth-of-type(5) {
   grid-column-start: 3;
   grid-column-end: 4;
   grid-row-start: 2;
@@ -243,9 +415,10 @@ ol:nth-of-type(5) {
   position: relative;
 }
 
-ol:nth-of-type(5) img {
-  max-width: 80%;
-  translate: -18vh;
+ul:nth-of-type(5) img {
+  max-width: 100%;
+  /* translate: -18vh; */
 
   filter: drop-shadow(0 0 2em var(--drop-shadows)) saturate(0.8);
 }
+
