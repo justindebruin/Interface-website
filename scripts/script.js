@@ -5,9 +5,7 @@
 /* MOVIE LOGO ARRAY */
 /********************/
 
-
 // Logo swap met Upgrade - Gemaakt met hulp van Bahaa//
-
 var moviesLogos = [                       
   "./images/Movie Logos/iron-man logo.png",
   "./images/Movie Logos/iron-man logo.png",
@@ -32,8 +30,6 @@ var moviesLogos = [
 
 var count = 0;
 
-// console.log(count);
-
 var upgradeButton = document.querySelector("article ul button");    // Upgrade button //
 var movieLogo = document.querySelector("h1 img");                   // Movie logo //
 
@@ -43,15 +39,11 @@ function imageNaarVolgendLogo() {
 
   if (count >= 19) {
     count = 0;
-    console.log(count);
-    console.log(moviesLogos[count]);
-    movieLogo.src = moviesLogos[count]
+    movieLogo.src = moviesLogos[count];
 
   } else {
     count++;
-    console.log(count);
-    console.log(moviesLogos[count]);
-    movieLogo.src = moviesLogos[count]
+    movieLogo.src = moviesLogos[count];
   }
 }
 
@@ -87,27 +79,20 @@ var ironManSuitCycle = [
   "./images/Iron Man suits/mark 85.png",  
 ];
 
-// console.log(count);
+var upgradeButtonSuits = document.querySelector("article ul button");               // Upgrade button //
+var ironManSuit = document.querySelector("article ul li:nth-of-type(1) img");       // Iron Man Suit //
+var suitFlying = document.querySelector("article ul li:nth-of-type(1) img");        // Suit fly-in animation //
 
-var upgradeButtonSuits = document.querySelector("article ul button")                    // Upgrade button //
-var ironManSuit = document.querySelector("article ul li:nth-of-type(1) img")       // Iron Man Suit //
-var suitFlying = document.querySelector("article ul li:nth-of-type(1) img")        // Suit fly-in animation //
-
-upgradeButtonSuits.onclick = combinedNextSuit
+upgradeButtonSuits.onclick = combinedNextSuit;
 
 function imageNaarVolgendSuit() {
 
   if (count>= 19) {
     window.location.reload();
-    console.log(count);
-    console.log(ironManSuitCycle[count]);
-    ironManSuit.src = ironManSuitCycle[count]
+    ironManSuit.src = ironManSuitCycle[count];
 
   } else {
-    // count++;
-    console.log(count);
-    console.log(ironManSuitCycle[count]);
-    ironManSuit.src = ironManSuitCycle[count]
+    ironManSuit.src = ironManSuitCycle[count];
   }
 }
 
@@ -117,7 +102,6 @@ function suitFlyAnimation() {
   suitFlying.onanimationend = geland;
   
   function geland() {
-    // console.log("he");
     suitFlying.classList.remove("flyIn");
   }
   
@@ -135,22 +119,21 @@ function suitFlyAnimation() {
 /* GELUID AFSPELEN */
 /*******************/
 
-var soundButton = document.querySelector("article ul:nth-of-type(2) button")
-var sound = document.querySelector("article ul audio")
+var soundButton = document.querySelector("article ul:nth-of-type(2) button");
+var sound = document.querySelector("article ul audio");
 
 soundButton.onclick = combinedNextSuit;
 
 function mechanicalSounds() {
   if (sound.paused) {
       sound.play();
-      // console.log("muziek");
     }
 
   else {
     sound.pause();
-    // console.log("muziek uit");
   }
 }
+
 
 
 
@@ -186,7 +169,7 @@ var textHead = [
 ];
 
 var headButton = document.querySelector("article ul:nth-of-type(2) button");
-var headText = document.querySelector("article ul:nth-of-type(3) li:nth-of-type(2)")
+var headText = document.querySelector("article ul:nth-of-type(3) li:nth-of-type(2)");
 
 headButton.onclick = combinedNextSuit;
 
@@ -195,18 +178,14 @@ function headTextSwap() {
   headText.innerHTML = textHead[count];
 
   if (count>= 19) {
-    window.location.reload();
-    // console.log(count);
-    // console.log(ironManSuitCycle[count]);
-    headText.src = textHead[count]
+    headText.src = textHead[count];
 
   } else {
-    // count++;
-    // console.log(count);
-    // console.log(ironManSuitCycle[count]);
-    headText.src = textHead[count]
+    headText.src = textHead[count];
   }
 }
+
+
 
 
 // text swap BODY //
@@ -233,7 +212,7 @@ var textBody = [
 ];
 
 var bodyButton = document.querySelector("article ul:nth-of-type(2) button");
-var bodyText = document.querySelector("article ul:nth-of-type(5) li:nth-of-type(2)")
+var bodyText = document.querySelector("article ul:nth-of-type(5) li:nth-of-type(2)");
 
 bodyButton.onclick = combinedNextSuit;
 
@@ -242,18 +221,14 @@ function bodyTextSwap() {
   bodyText.innerHTML = textBody[count];
 
   if (count>= 19) {
-    window.location.reload();
-    // console.log(count);
-    // console.log(ironManSuitCycle[count]);
-    bodyText.src = textBody[count]
+    bodyText.src = textBody[count];
 
   } else {
-    // count++;
-    // console.log(count);
-    // console.log(ironManSuitCycle[count]);
-    bodyText.src = textBody[count]
+    bodyText.src = textBody[count];
   }
 }
+
+
 
 
 
@@ -278,10 +253,10 @@ var textFeet = [
   "Has powerful, detachable jets that launch from the suit.",
   "The design mimicked the shape of Starks body and was able to fly into deep space without any drawbacks.",
   "Solved the limitation of FRIDAY not working in deep space.",
-]
+];
 
 var feetButton = document.querySelector("article ul button");
-var feetText = document.querySelector("article ul:nth-of-type(4) li:nth-of-type(2)")
+var feetText = document.querySelector("article ul:nth-of-type(4) li:nth-of-type(2)");
 
 feetButton.onclick = combinedNextSuit;
 
@@ -290,18 +265,15 @@ function feetTextSwap() {
   feetText.innerHTML = textFeet[count];
 
   if (count>= 19) {
-    window.location.reload();
-    // console.log(count);
-    // console.log(ironManSuitCycle[count]);
-    feetText.src = textFeet[count]
+    feetText.src = textFeet[count];
 
   } else {
-    // count++;
-    // console.log(count);
-    // console.log(ironManSuitCycle[count]);
-    feetText.src = textFeet[count]
+    feetText.src = textFeet[count];
   }
 }
+
+
+
 
 // text swap suit name //
 var suitName = [
@@ -324,10 +296,10 @@ var suitName = [
   "Mark XLVII",
   "Mark L",
   "Mark LXXXV",
-]
+];
 
 var suitNameButton = document.querySelector("article ul button");
-var suitNameText = document.querySelector("article ul:nth-of-type(6) li:nth-of-type(2)")
+var suitNameText = document.querySelector("article ul:nth-of-type(6) li:nth-of-type(2)");
 
 suitNameButton.onclick = combinedNextSuit;
 
@@ -335,21 +307,51 @@ function suitNameSwap() {
 
   suitNameText.innerHTML = suitName[count];
 
-  if (count>= 19) {
+  if (count >= 19) {
     window.location.reload();
-    // console.log(count);
-    // console.log(ironManSuitCycle[count]);
-    suitNameText.src = suitName[count]
+    suitNameText.src = suitName[count];
 
   } else {
-    // count++;
-    // console.log(count);
-    // console.log(ironManSuitCycle[count]);
-    suitNameText.src = suitName[count]
+    suitNameText.src = suitName[count];
   }
 }
 
 
+
+
+
+
+
+
+
+
+/**************/
+/* EASTER EGG */
+/**************/
+
+var easterEggButton = document.querySelector("h1 button");    // Button op logo //
+
+function playVideo() {
+
+  if (count >= 18) {
+    easterEggButton.removeAttribute("disabled");
+
+  } else {
+    easterEggButton.setAttribute("disabled", "");
+  }
+}
+
+
+
+
+
+
+
+
+
+/**************/
+/* COMBI-KNOP */
+/**************/
 
 function combinedNextSuit() {
   mechanicalSounds(); 
@@ -360,5 +362,6 @@ function combinedNextSuit() {
   bodyTextSwap();
   feetTextSwap();
   suitNameSwap();
+  playVideo();
 }
 

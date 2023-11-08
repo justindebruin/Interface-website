@@ -1,6 +1,24 @@
+
 /**************/
 /* CSS REMEDY */
 /**************/
+
+/* naar een idee van Jen Simmons */
+*, *::after, *::before {
+  box-sizing:border-box;  
+}
+
+
+
+
+
+
+
+
+
+/***********************/
+/* FONTS & BACKGROUNDS */
+/***********************/
 
 @font-face {
   font-family: "Orbitron";
@@ -14,37 +32,37 @@
     url("../fonts/AldotheApache.ttf") format("truetype");
 }
 
-/* naar een idee van Jen Simmons */
-*, *::after, *::before {
-  box-sizing:border-box;  
-}
 
+
+
+/* Background styling */
 body {
   margin:auto;
 
-  background-image:  url("../images/Background\ tony\ lab\ Blauw-donker.png");
+  background-image:  url("../images/Backgrounds/Background\ tony\ lab\ Blauw-donker.png");
   background-size: cover;
   background-position: center 70%;
   
   height:100dvh;
-  cursor: url("../images/iron-man-hand-cursor.png") 21 27, pointer;
+  cursor: url("../images/Cursors/iron-man-hand-cursor.png") 21 27, pointer;
 }
 
 body::before {
   content:"";
   position:fixed;
   inset:0;
-  background-image:url("../images/iron\ man\ hud\ overlay-04.png");
+  background-image:url("../images/Backgrounds/iron\ man\ hud\ overlay-04.png");
 
   background-size: cover;
   background-position: center 70%;
 }
 
+/* Accessability for animation */
 @media (prefers-reduced-motion:no-preference) {
   body::before {
     animation-name: fadein;
-    animation-duration: 1s;
-    animation-delay: 2s;
+    animation-duration: 1.5s;
+    animation-delay: 1.5s;
     animation-fill-mode: both;
   }
 }
@@ -58,11 +76,16 @@ body::before {
   }
 }
 
-
-
-button {
-  cursor: url("../images/iron-man-hand-cursor-click.png") 21 27, pointer;
+/* Button cursor styling */
+ul button {
+  cursor: url("../images/Cursors/iron-man-hand-cursor-click.png") 21 27, pointer;
 }
+
+
+
+
+
+
 
 
 
@@ -76,23 +99,24 @@ button {
   --color-text: #FFFFFF;
   --drop-shadows: #000000;
   --transparent-background: #FFFFFF00;
-
-  /* ... */
-
+  --tab-shadow: rgb(0, 70, 169);
 }
 
 
 
 
 
-/********************/
-/* ALGEMENE STYLING */
-/********************/
+
+
+
+/******************/
+/* STYLING HEADER */
+/******************/
 
 h1 {
   color: var(--color-headings);
   font-family: "Orbitron", Helvetica, sans-serif;
-  font-size: 2.5  vw;
+  font-size: 2vw;
   text-align: left;
   margin-left: 10%;
 
@@ -100,36 +124,64 @@ h1 {
 }
 
 h1 img { 
-  max-height: 2.5em;
+  max-height: 9vh;
+  max-width: 20vw;
 }
+
+h1 button {
+  background-color: var(--transparent-background);
+  border-color: var(--transparent-background);
+
+  cursor: url("../images/Cursors/iron-man-hand-cursor.png") 21 27, pointer;
+}
+
+
+
+
+
+
+
+
+
+/*******************/
+/* STYLING ARTICLE */
+/*******************/
 
 article {
   height:100%;
 
   display: grid;
   grid-template: 1fr 1fr 1fr 1fr 30% / 0.88fr 1.5fr 1fr;
-
 }
 
-/* text in bubbles */
+
+
+
+
+
+
+
+
+
+
+/****************/
+/* TEXT BUBBLES */
+/****************/
 
 
 /* HEAD textbubble */
 ul:nth-of-type(3) {
   position: relative;
   text-align: left;
-
 }
 
 ul:nth-of-type(3) li {
   position: absolute;
   max-width: 110%;
-
 }
 
 ul:nth-of-type(3) li:nth-of-type(1) {
   translate: 15vh 5vh;
-
 }
 
 ul:nth-of-type(3) li:nth-of-type(2) {
@@ -140,8 +192,9 @@ ul:nth-of-type(3) li:nth-of-type(2) {
   color: var(--color-text); 
 
   translate: 19.6vh 7.9vh;
-
 }
+
+
 
 
 /* FEET textbubble */
@@ -149,18 +202,15 @@ ul:nth-of-type(4) {
   position: relative;
   text-align: left;
   text-align: top;
-
 }
 
 ul:nth-of-type(4) li {
   position: absolute;
   max-width: 110%;
-
 }
 
 ul:nth-of-type(4) li:nth-of-type(1) {
   translate: 20vh 1vh;
-
 }
 
 ul:nth-of-type(4) li:nth-of-type(2) {
@@ -171,8 +221,8 @@ ul:nth-of-type(4) li:nth-of-type(2) {
   color: var(--color-text); 
 
   translate: 23.6vh 4.5vh;
-
 }
+
 
 
 
@@ -181,18 +231,15 @@ ul:nth-of-type(4) li:nth-of-type(2) {
 ul:nth-of-type(5) {
   position: relative;
   text-align: left;
-
 }
 
 ul:nth-of-type(5) li {
   position: absolute;
   max-width: 110%;
-
 }
 
 ul:nth-of-type(5) li:nth-of-type(1) {
   translate: -20vh;
-
 }
 
 ul:nth-of-type(5) li:nth-of-type(2) {
@@ -203,25 +250,25 @@ ul:nth-of-type(5) li:nth-of-type(2) {
   color: var(--color-text); 
 
   translate: -1.5vh 3.8vh;
-
 }
+
+
+
+
 
 /* Suit name textbubble */
 ul:nth-of-type(6) {
   position: relative;
   text-align: left;
-
 }
 
 ul:nth-of-type(6) li {
   position: absolute;
   max-width: 110%;
-
 }
 
 ul:nth-of-type(6) li:nth-of-type(1) {
   translate: 56vh;
-
 }
 
 ul:nth-of-type(6) li:nth-of-type(2) {
@@ -230,7 +277,7 @@ ul:nth-of-type(6) li:nth-of-type(2) {
   max-width: 65%;
   color: var(--color-text); 
 
-  translate: 62.5vh 3.5vh;
+  translate: 62.5vh 2.7vh;
 }
 
 ul:nth-of-type(6) {
@@ -250,14 +297,25 @@ ul:nth-of-type(6) {
 
 ul:nth-of-type(6) img {
   max-width: 80%;
-  scale: 80%;
-  /* translate: 53vh; */
-  
+  scale: 80%;  
 
-  filter: drop-shadow(0 0 2em var(--drop-shadows)) saturate(0.8);
+  filter: drop-shadow(0 0 2em var(--drop-shadows)) saturate(0.9);
 }
 
-/* Vormgeving Iron Man suits */
+
+
+
+
+
+
+
+
+
+
+
+/**************************/
+/* STYLING IRON MAN SUITS */
+/**************************/
 
 ul:nth-of-type(1) {
   grid-column-start: 2;
@@ -297,14 +355,24 @@ ul:nth-of-type(1) li:nth-of-type(1) img {
 }
 
 ul:nth-of-type(1) li:nth-of-type(1) img.flyIn {
-  /* animation-play-state:running; */
   animation-name: suit-flying;
   animation-duration: 2s;
-  /* animation-play-state: paused; */
   animation-timing-function: cubic-bezier(0.365, -0.015, 0.000, 0.900); 
 }
 
-/* Vormgeving Upgrade-knop */
+
+
+
+
+
+
+
+
+
+
+/**************************/
+/* STYLING UPGRADE BUTTON */
+/**************************/
 
 ul:nth-of-type(2) {
   grid-column-start: 3;
@@ -339,6 +407,17 @@ ul:nth-of-type(2) button {
 ul:nth-of-type(2) button:hover {
   scale: 0.9;
   transition-duration: .3s;
+  filter: drop-shadow(0 0 1em var(--tab-shadow)) saturate(1.1);
+}
+
+ul:nth-of-type(2) button:active {
+  filter: drop-shadow(0 0 1em var(--tab-shadow)) saturate(1.1);
+}
+
+ul:nth-of-type(2) button:focus-visible {
+  scale: 0.9;
+  transition-duration: .3s;
+  filter: drop-shadow(0 0 1em var(--tab-shadow)) saturate(1.1);
 }
 
 ul:nth-of-type(2) button img {
@@ -347,11 +426,24 @@ ul:nth-of-type(2) button img {
   min-width: 80%;
   min-height: auto;
 
-  filter: drop-shadow(0 0 2em var(--drop-shadows)) saturate(0.8);
+  filter: drop-shadow(0 0 2em var(--drop-shadows)) saturate(0.9);
 }
 
-/* CSS voor plaatsing textbubbels - head */
 
+
+
+
+
+
+
+
+
+
+/***********************************/
+/* TEXTBUBBLE PLACEMENTS & STYLING */
+/***********************************/
+
+/* textbubble - head */
 ul:nth-of-type(3) {
   grid-column-start: 1;
   grid-column-end: 2;
@@ -369,13 +461,14 @@ ul:nth-of-type(3) {
 
 ul:nth-of-type(3) img {
   max-width: 110%;
-  /* translate: 20vh 5vh; */
 
   filter: drop-shadow(0 0 2em var(--drop-shadows)) saturate(0.8);
 }
 
-/* CSS voor plaatsing textbubbels - feet */
 
+
+
+/* textbubble - feet */
 ul:nth-of-type(4) {
   grid-column-start: 1;
   grid-column-end: 2;
@@ -393,13 +486,15 @@ ul:nth-of-type(4) {
 
 ul:nth-of-type(4) img {
   max-width: 120%;
-  /* translate: 28vh 3vh; */
 
   filter: drop-shadow(0 0 2em var(--drop-shadows)) saturate(0.8);
 }
 
-/* CSS voor plaatsing textbubbels - body */
 
+
+
+
+/* textbubble - body */
 ul:nth-of-type(5) {
   grid-column-start: 3;
   grid-column-end: 4;
@@ -417,8 +512,6 @@ ul:nth-of-type(5) {
 
 ul:nth-of-type(5) img {
   max-width: 100%;
-  /* translate: -18vh; */
 
   filter: drop-shadow(0 0 2em var(--drop-shadows)) saturate(0.8);
 }
-
