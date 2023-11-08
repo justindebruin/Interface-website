@@ -5,13 +5,13 @@
 @font-face {
   font-family: "Orbitron";
   src:
-    url("/fonts/Orbitron-VariableFont_wght.ttf") format("truetype");
+    url("../fonts/Orbitron-VariableFont_wght.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Aldo";
   src:
-    url("/fonts/AldotheApache.ttf") format("truetype");
+    url("../fonts/AldotheApache.ttf") format("truetype");
 }
 
 /* naar een idee van Jen Simmons */
@@ -22,19 +22,19 @@
 body {
   margin:auto;
 
-  background-image:  url("/images/Background\ tony\ lab\ Blauw-donker.png");
+  background-image:  url("../images/Background\ tony\ lab\ Blauw-donker.png");
   background-size: cover;
   background-position: center 70%;
   
   height:100dvh;
-  cursor: url("/images/iron-man-hand-cursor.png") 21 27, pointer;
+  cursor: url("../images/iron-man-hand-cursor.png") 21 27, pointer;
 }
 
 body::before {
   content:"";
   position:fixed;
   inset:0;
-  background-image:url("/images/iron\ man\ hud\ overlay-04.png");
+  background-image:url("../images/iron\ man\ hud\ overlay-04.png");
 
   background-size: cover;
   background-position: center 70%;
@@ -61,7 +61,7 @@ body::before {
 
 
 button {
-  cursor: url("/images/iron-man-hand-cursor-click.png") 21 27, pointer;
+  cursor: url("../images/iron-man-hand-cursor-click.png") 21 27, pointer;
 }
 
 
